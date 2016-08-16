@@ -18,8 +18,8 @@
  * Question type class for the YOURQTYPENAME question type.
  *
  * @package    qtype
- * @subpackage YOURQTYPENAME
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @subpackage marktext
+ * @copyright  2016 Martin Putzlocher (mp@mint-oer.de)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -33,13 +33,13 @@ require_once($CFG->dirroot . '/question/type/YOURQTYPENAME/question.php');
 
 
 /**
- * The YOURQTYPENAME question type.
+ * The marktext question type.
  *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2016 Martin Putzlocher (mp@mint-oer.de)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_YOURQTYPENAME extends question_type {
+class qtype_marktext extends question_type {
 
     public function move_files($questionid, $oldcontextid, $newcontextid) {
         parent::move_files($questionid, $oldcontextid, $newcontextid);

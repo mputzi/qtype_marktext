@@ -15,40 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines the editing form for the qtype_marktext question type.
+ * Strings for component 'qtype_marktext', language 'en', branch 'MOODLE_31_STABLE'
  *
  * @package    qtype
  * @subpackage marktext
- * @copyright  Martin Putzlocher (mp@mint-oer.de)
-
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-
-defined('MOODLE_INTERNAL') || die();
-
-
-/**
- * qtype_marktext question editing form definition.
- *
  * @copyright  2016 Martin Putzlocher (mp@mint-oer.de)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_marktext_edit_form extends question_edit_form {
+$string['pluginname'] = 'marktext';
+$string['pluginname_help'] = 'Create a question type where words in a given text have to be marked.';
+$string['pluginname_link'] = 'question/type/marktext';
+$string['pluginnameadding'] = 'Adding a marktext question';
+$string['pluginnameediting'] = 'Editing a marktext question';
+$string['pluginnamesummary'] = 'A marktext question type which allows the marking of a number of words in a given text.
 
-    protected function definition_inner($mform) {
-        $this->add_interactive_settings();
-    }
-
-    protected function data_preprocessing($question) {
-        $question = parent::data_preprocessing($question);
-        $question = $this->data_preprocessing_hints($question);
-
-        return $question;
-    }
-
-    public function qtype() {
-        return 'marktext';
-    }
-}
+So the student can click on a word and it is being marked.';

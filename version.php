@@ -18,15 +18,15 @@
  * YOURQTYPENAME question type version information.
  *
  * @package    qtype
- * @subpackage YOURQTYPENAME
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @subpackage marktext
+ * @copyright  2016 Martin Putzlocher (mp@mint-oer.de)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'qtype_YOURQTYPENAME';
+$plugin->component = 'qtype_marktext';
 $plugin->version   = 2013012900;
 
 $plugin->requires  = 2012062504;
