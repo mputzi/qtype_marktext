@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   tobemarked.html
+   
+   Copyright 2016 Martin Putzlocher <mp@mint-oer.de>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<head>
+<meta charset="utf-8" />
+<title>tobemarked</title>
+<meta name="generator" content="Geany 1.27" />
+<script type="text/javascript">
+
+function cutText(){
+	var strdiv = document.getElementById("markme");
+	var str = strdiv.innerHTML;
+	
+	var wordlist = str.split(/\b/g);
+	console.log(wordlist);
+	var wordcount = wordlist.length;
+	console.log(wordcount);
+	
+	var wordlist2=[];
+	function expandToSpans(x,i){
+		if (x!=" "){
+			wordlist2.push("<span id='word"+i+"' class='unmarked' onclick='markWord("+i+")'>"+x+"</span>");
+		}
+		else {
+			wordlist2.push(x);
+		}
+	}
+	
+	wordlist.forEach(expandToSpans);
+	//str= str.replace(/\W/g, "");
+	console.log(wordlist2);
+	
+	var newstr = wordlist2.join("");
+	console.log(newstr);
+	
+	document.getElementById("markme").innerHTML = newstr;
+	}
+
+function markWord(i){
+	var idtag = "word"+i;
+	var strspan = document.getElementById(idtag);
+	if (strspan.getAttribute("class") == "unmarked"){
+		strspan.setAttribute("style","background-color: yellow;");
+		strspan.setAttribute("class","marked");
+	}
+	else{
+		strspan.setAttribute("style","background-color: ;");
+		strspan.setAttribute("class","unmarked");
+		}
+	
+	
+	}
+
+
+
+</script>
+
+
+</head>
+
+<body onload="cutText()">
+<p>
+<div id="markme">
+This is a text%for the purpose of testing.
+</div>
+
+
+</p>
+
+</body>
+
+</html>
