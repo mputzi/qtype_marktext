@@ -34,9 +34,9 @@ function cutText(){
 	var str = strdiv.innerHTML;
 	
 	var wordlist = str.split(/\b/g);
-	console.log(wordlist);
+	//console.log(wordlist);
 	var wordcount = wordlist.length;
-	console.log(wordcount);
+	//console.log(wordcount);
 	
 	var wordlist2=[];
 	function expandToSpans(x,i){
@@ -50,10 +50,10 @@ function cutText(){
 	
 	wordlist.forEach(expandToSpans);
 	//str= str.replace(/\W/g, "");
-	console.log(wordlist2);
+	//console.log(wordlist2);
 	
 	var newstr = wordlist2.join("");
-	console.log(newstr);
+	//console.log(newstr);
 	
 	document.getElementById("markme").innerHTML = newstr;
 	}
@@ -69,8 +69,6 @@ function markWord(i){
 		strspan.setAttribute("style","background-color: ;");
 		strspan.setAttribute("class","unmarked");
 		}
-	
-	
 	}
 
 
@@ -83,7 +81,7 @@ function markWord(i){
 <body onload="cutText()">
 <p>
 <div id="markme">
-This is a text%for the purpose of testing.
+This is a text%for the purpose of testing. 
 </div>
 
 

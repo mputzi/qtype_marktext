@@ -39,6 +39,8 @@ class qtype_marktext_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
         $this->add_interactive_settings();
+        $mform->addElement('text', 'markme', get_string('name1', 'qtype_marktext'), array('size'=>'50'));
+		$mform->setType('name1', PARAM_CLEANHTML);
     }
 
     protected function data_preprocessing($question) {
