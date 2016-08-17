@@ -17,7 +17,7 @@
 /**
  * Defines the editing form for the qtype_marktext question type.
  *
- * @package    qtype
+ * @package    qtype_marktext
  * @subpackage marktext
  * @copyright  Martin Putzlocher (mp@mint-oer.de)
 
@@ -38,9 +38,13 @@ defined('MOODLE_INTERNAL') || die();
 class qtype_marktext_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
-        $this->add_interactive_settings();
-        $mform->addElement('text', 'markme', get_string('name1', 'qtype_marktext'), array('size'=>'50'));
-		$mform->setType('name1', PARAM_CLEANHTML);
+    	global $PAGE;
+    	
+        
+        $mform->addElement('text', 'markme', get_string('markme', 'qtype_marktext'), array('size'=>'50'));
+		$mform->setType('markme', PARAM_RAW);
+		
+		$this->add_interactive_settings(true, true);
     }
 
     protected function data_preprocessing($question) {

@@ -19,7 +19,7 @@
  *
  * @since      2.0
  * @package    qtype_marktext
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2016 Martin Putzlocher (mp@mint-oer.de)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

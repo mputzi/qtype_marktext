@@ -36,6 +36,21 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_marktext_renderer extends qtype_renderer {
+	
+	
+/**
+     * Generate the display of the formulation part of the question. This is the
+     * area that contains the question text, and the controls for students to
+     * input their answers.
+     *
+     * We store base64 string and the answer string (in the form of zeros and ones) in a hidden field and load the applet and
+     * some javascript used to update the hidden fields.
+     *
+     * @param question_attempt         $qa      the question attempt to display.
+     * @param question_display_options $options controls what should and should not be displayed.
+     * @return string HTML fragment.
+     */
+	
     public function formulation_and_controls(question_attempt $qa,
             question_display_options $options) {
 
@@ -46,13 +61,13 @@ class qtype_marktext_renderer extends qtype_renderer {
         if (preg_match('/_____+/', $questiontext, $matches)) {
             $placeholder = $matches[0];
         }
-        $input = '**subq controls go in here**';
-
+       // $input = '**subq controls go in here**';
+/*
         if ($placeholder) {
             $questiontext = substr_replace($questiontext, $input,
                     strpos($questiontext, $placeholder), strlen($placeholder));
         }
-
+*/
         $result = html_writer::tag('div', $questiontext, array('class' => 'qtext'));
 
         /* if ($qa->get_state() == question_state::$invalid) {
